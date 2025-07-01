@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 import numpy as np
 import random
+import sqlite3
 
 def get_title(soup):
     
@@ -176,3 +177,7 @@ amazon_df = pd.DataFrame.from_dict(d)
 amazon_df['title'] = amazon_df['title'].replace('', np.nan)
 amazon_df = amazon_df.dropna(subset=['title'])
 amazon_df.to_csv("amazon_data.csv", header=True, index=False) 
+
+conn = sqlite3.connect("amazon_products.db")
+amazon_df.to_sql("products", conn, if_exists="replace", index=False)
+conn.close()
