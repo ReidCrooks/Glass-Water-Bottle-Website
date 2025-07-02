@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bottle Browser</title>
+    <!--add styles.css-->
+
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Bottle Browser</h1>
+      <p>Find your perfect glass water bottle with custom filters</p>
+    </div>
+    <div class="sidebar">
+      <ul class="filters">
+        <!-- Size Filter (Checkboxes in Dropdown) -->
+        <li class="filter-dropdown">
+          <button class="dropdown-btn">Size</button>
+          <div class="dropdown-content">
+            <div class="checkbox-option">
+              <input type="checkbox" id="size-18" name="size" value="18" />
+              <label for="size-18">18oz</label>
+            </div>
+            <div class="checkbox-option">
+              <input type="checkbox" id="size-32" name="size" value="32" />
+              <label for="size-32">32oz</label>
+            </div>
+            <div class="checkbox-option">
+              <input type="checkbox" id="size-64" name="size" value="64" />
+              <label for="size-64">64oz</label>
+            </div>
+          </div>
+        </li>
+
+        <!-- Rating Filter (Stars in Dropdown) -->
+        <li class="filter-dropdown">
+          <button class="dropdown-btn">Minimum Rating</button>
+          <div class="dropdown-content">
+            <div class="star-rating">
+              <span class="star" data-rating="1">★</span>
+              <span class="star" data-rating="2">★</span>
+              <span class="star" data-rating="3">★</span>
+              <span class="star" data-rating="4">★</span>
+              <span class="star" data-rating="5">★</span>
+              <input type="hidden" id="selected-rating" value="0" />
+            </div>
+          </div>
+        </li>
+
+        <!-- Reviews Filter (Slider in Dropdown)-->
+        <!-- The name="min_reviews" is what you'll use in your Flask 
+          request.form.get() to access the selected value.-->
+        <li class="filter-dropdown">
+          <button class="dropdown-btn">Reviews</button>
+          <div class="dropdown-content">
+            <div class="range-slider">
+              <label for="min-reviews">Minimum Number of Reviews:</label>
+              <input
+                type="range"
+                id="min-reviews"
+                name="min_reviews"
+                min="0"
+                max="30000"
+                step="100"
+                value="0"
+                oninput="minReviewOutput.value = this.value"
+              />
+              <output id="minReviewOutput">0</output>
+            </div>
+          </div>
+        </li>
+
+        <!-- Price Filter Slider in Dropdown -->
+         <!-- updateDualSlider() needs to be created in js-->
+        <li class="filter-dropdown">
+          <button class="dropdown-btn">Price</button>
+          <div class="dropdown-content">
+            <div class="dual-slider-container">
+              <label for="price-range">Price Range:</label>
+              <div class="slider-values">
+                <span id="minPriceDisplay">$0</span> -
+                <span id="maxPriceDisplay">$100</span>
+              </div>
+              <div class="slider-track">
+                <input
+                  type="range"
+                  id="minPrice"
+                  name="min_price"
+                  min="0"
+                  max="100"
+                  value="0"
+                  step="1"
+                  oninput="updateDualSlider()"
+                />
+                <input
+                  type="range"
+                  id="maxPrice"
+                  name="max_price"
+                  min="0"
+                  max="100"
+                  value="100"
+                  step="1"
+                  oninput="updateDualSlider()"
+                />
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="results"></div>
+    <div class="footer"></div>
+  </body>
+</html>
