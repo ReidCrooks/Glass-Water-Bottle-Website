@@ -1,4 +1,7 @@
-/* Modern Color Palette */
+/*Need to adjust side bar such that drop 
+downs are centered*/
+
+/* Color Palette */
 :root {
   --primary: #1a2b38; /* Deep navy */
   --secondary: #20b2aa; /* Teal */
@@ -89,6 +92,10 @@ header p {
   border-radius: var(--radius-md);
   margin: 1rem;
   box-shadow: var(--shadow-sm);
+}
+
+.filters {
+    list-style-type: none;
 }
 
 .filter-dropdown {
