@@ -83,7 +83,6 @@ header p {
   max-width: 600px;
 }
 
-/* Modern Sidebar */
 .sidebar {
   width: 300px;
   background-color: white;
@@ -94,8 +93,12 @@ header p {
   box-shadow: var(--shadow-sm);
 }
 
-.filters {
+/*Centered side-bar dropdowns*/
+ul.filters {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 }
 
 .filter-dropdown {
@@ -145,7 +148,6 @@ header p {
   display: block;
 }
 
-/* Modern Checkboxes */
 .checkbox-option {
   margin: 0.8rem 0;
   display: flex;
@@ -184,7 +186,6 @@ header p {
   font-size: 0.95rem;
 }
 
-/* Modern Star Rating */
 .star-rating {
   display: flex;
   gap: 0.5rem;
@@ -238,7 +239,6 @@ header p {
   margin: 1rem;
 }
 
-/* Modern Footer */
 footer {
   background: white;
   padding: 2rem;
