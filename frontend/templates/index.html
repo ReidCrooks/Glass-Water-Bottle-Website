@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="/frontend/static/js/script.js"></script>
   </head>
   <body>
     <header>
@@ -63,7 +64,7 @@
           <!-- The name="min_reviews" is what you'll use in your Flask 
           request.form.get() to access the selected value.-->
           <li class="filter-dropdown">
-            <button onclick="dropdown()" class="dropdown-btn">Reviews</button>
+            <button class="dropdown-btn">Reviews</button>
             <div class="dropdown-content">
               <div class="range-slider">
                 <label for="min-reviews">Minimum Number of Reviews:</label>
@@ -141,6 +142,5 @@
         </a>
       </div>
     </footer>
-    <script src="/frontend/static/js/script.js"></script>
   </body>
 </html>

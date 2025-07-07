@@ -1,13 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
-    //Function for making drop-down work on sidebar
-  const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-
-  dropdownButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.stopPropagation
-    })
-  })
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const dropdown = button.parentElement;
+      dropdown.classList.toggle('active');
+    });
+  });
 });
-
-
-
