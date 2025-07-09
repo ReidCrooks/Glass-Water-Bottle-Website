@@ -47,21 +47,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Price slider functionality
 function updateDualSlider() {
-  const minSlider = document.querySelector("#minPrice");
-  const maxSlider = document.querySelector("#maxPrice");
+  const minSlider = document.getElementById("minPrice");
+  const maxSlider = document.getElementById("maxPrice");
   const minDisplay = document.getElementById("minPriceDisplay");
   const maxDisplay = document.getElementById("maxPriceDisplay");
+  const rangeFill = document.getElementById("rangeFill");
 
-  let minimum = parseInt(minSlider.value);
-  let maximum = parseInt(maxSlider.value);
+  let min = parseInt(minSlider.value);
+  let max = parseInt(maxSlider.value);
 
-  if (minimum > maximum) {
-    [minSlider.value, maxSlider.value] = [maximum, minimum];
-    let xminimum = minimum;
-    minimum = maximum;
-    maximum = xminimum;
+  if (min > max) {
+    [min, max] = [max, min];
   }
 
-  minDisplay.textContent = `$${minimum}`;
-  maxDisplay.textContent = `$${maximum}`;
+  minDisplay.textContent = `$${min}`;
+  maxDisplay.textContent = `$${max}`;
+
+  const rangeMin = parseInt(minSlider.min);
+  const rangeMax = parseInt(minSlider.max);
+
+  const left = ((min - rangeMin) / (rangeMax - rangeMin)) * 100;
+  const right = ((max - rangeMin) / (rangeMax - rangeMin)) * 100;
+
+  rangeFill.style.left = `${left}%`;
+  rangeFill.style.width = `${right - left}%`;
 }

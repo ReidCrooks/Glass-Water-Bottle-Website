@@ -95,10 +95,10 @@ header p {
 
 /*Centered side-bar dropdowns*/
 ul.filters {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
 .filter-dropdown {
@@ -227,6 +227,43 @@ ul.filters {
   border-radius: 50%;
   cursor: pointer;
   pointer-events: all;
+}
+
+.slider-track {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track input[type="range"] {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  background: none;
+}
+
+.slider-track input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--secondary);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.range-fill {
+  position: absolute;
+  height: 6px;
+  background-color: var(--secondary);
+  z-index: 1;
+  border-radius: 3px;
 }
 
 /* Results Section */
