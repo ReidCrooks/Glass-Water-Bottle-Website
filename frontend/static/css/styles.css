@@ -226,6 +226,7 @@ ul.filters {
   background: var(--secondary);
   border-radius: 50%;
   cursor: pointer;
+  pointer-events: all;
 }
 
 /* Results Section */

@@ -44,3 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//Price slider functionality
+function updateDualSlider() {
+  const minSlider = document.querySelector("#minPrice");
+  const maxSlider = document.querySelector("#maxPrice");
+  const minDisplay = document.getElementById("minPriceDisplay");
+  const maxDisplay = document.getElementById("maxPriceDisplay");
+
+  let minimum = parseInt(minSlider.value);
+  let maximum = parseInt(maxSlider.value);
+
+  if (minimum > maximum) {
+    [minSlider.value, maxSlider.value] = [maximum, minimum];
+    let xminimum = minimum;
+    minimum = maximum;
+    maximum = xminimum;
+  }
+
+  minDisplay.textContent = `$${minimum}`;
+  maxDisplay.textContent = `$${maximum}`;
+}
