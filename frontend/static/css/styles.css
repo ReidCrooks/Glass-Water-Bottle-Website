@@ -255,7 +255,7 @@ ul.filters {
   border: 2px solid white;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   position: relative;
-  z-index: 2;
+  z-index: 2; 
 }
 
 .range-fill {
