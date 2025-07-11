@@ -4,3 +4,4 @@ Filters amazon listings for glass water bottles and outputs desired bottle based
 
 // Things to add
 - make stars bounce when selected
+//55 minute mark in Flask tutorial for POST requests (getting input data from filters)
